@@ -14,7 +14,7 @@ body{
 header{
     display:flex;
     flex-direction: column;
-    background-color: #1d7dbd;
+    background-color: #18669b;
     position: sticky;
     top:0;
     align-items: center;
@@ -68,12 +68,12 @@ nav a:hover{
 }
 
 h1, h2, p, a{
-    color: #ecf0f1;
+    color: #ffffff;
 }
 
 h3{
-    color: #ecf0f1;
-    border-bottom: 1px solid #1d7dbd;
+    color: #ffffff;
+    border-bottom: 1px solid #18669b;
 }
 
 main{
@@ -81,11 +81,15 @@ main{
 }
 
 main ul li::marker{
-    color: #ecf0f1;
+    color: #ffffff;
+}
+
+#resources li{
+    margin:10px;
 }
 
 footer{
-    background-color: #1d7dbd;
+    background-color: #18669b;
     min-height: 25px;
     padding: 10px;
     text-align: center;
