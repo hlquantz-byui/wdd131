@@ -1,0 +1,38 @@
+@media screen and (min-width: 500px){
+    #temple-pictures{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    #menu {
+        display: none;
+    }
+
+    nav {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        height: 50px;
+        max-width: 800px;
+        margin: 0;
+        padding: 0;
+    }
+
+    nav ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        width: 100%
+    }
+
+    nav ul li {
+        flex: 1 1 auto;
+
+    }
+
+    nav a {
+        display: block;
+        flex: 1 1 100%;
+        font-size: 25px;
+        
+    }
+}
