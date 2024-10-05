@@ -1,3 +1,8 @@
+:root{
+    --primary-color: #18669b;
+    --secondary-color: rgba(44,62,80,0.8);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -148,6 +153,13 @@ ul{
 
 .location-name{
     background-color: #18669b;
+}
+
+.location-name::after{
+    content: "- The Land of the Free";
+    display:block;
+    font-size: 0.8em;
+    margin-top: 5px;
 }
 
 footer {
