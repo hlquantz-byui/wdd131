@@ -96,7 +96,7 @@ main {
 }
 
 section {
-    border: 1px solid #18669b;
+    border: 1px solid var(--primary-color);
     border-radius: 5px;
     padding: 15px;
 }

@@ -1,3 +1,8 @@
+:root {
+    --primary-color: #18669b;
+    --secondary-color: rgba(44, 62, 80, 0.8);
+}
+
 @media (min-width: 601px){
     .hero{
         position: relative;
@@ -15,7 +20,7 @@
     }
     .data{
         position: absolute;
-        background-color: rgba(44, 62, 80, 0.8);
+        background-color: var(--secondary-color);
         top: 10px;
         left: 10px;
         border: 1px solid #18669b;
