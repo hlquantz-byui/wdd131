@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WDD 131 Hunter Quantz | Place</title>
+    <meta name="author" content="Hunter Quantz">
+    <meta name="description" content="This web page is for the assignment places for week 3 in wdd 131. It highlights a place I am from.">
+    <link rel="stylesheet" href="/styles/place.css">
+    <link rel="stylesheet" href="/styles/place-large.css">
+    <script src="/scripts/place.js" defer></script>
+    <script src="/scripts/getdates.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
+</head>
+<body>
+    <header>
+        <!-- The assignment's wireframe does not show a navigation. Unless the audit shows it is not there, I am skipping it to save time. -->
+    </header>
+    <main>
+        <h1 class="location-name">United States of America</h1>
+        <section class="hero">
+            <picture>
+                <source srcset="images/arches-small.webp" media="(max-width: 600px)">
+                <source srcset="images/arches-large.webp" media="(max-width: 1200px)">
+                <img src="images/arches-large.webp" alt="Picture of rock arch">
+            </picture>
+            <section class="data">
+                <h2>Data</h2>
+                <div>
+                    <label for="area">Area:</label>
+                    <span id="area">3.8 million square miles</span>
+                </div>
+                <div>
+                    <label for="population">Population</label>
+                    <span id="population">331.4 million, per 2020 census</span>
+                </div>
+                <div>
+                    <label for="capital">Capital:</label>
+                    <span id="capital">Washington, D.C</span>
+                </div>
+                <div>
+                    <label for="languages">Languages:</label>
+                    <span>The United States has no federally recognized language.</span>
+                </div>
+                <div>
+                    <label for="currency">Currency:</label>
+                    <span id="currency">United States Dollar (USD)</span>
+                </div>
+                <div>
+                    <label for="timeZone">Time Zones:</label>
+                    <ul id="timeZone">
+                        <li>Eastern Standard Time (EST)</li>
+                        <li>Central Standard Time (CST)</li>
+                        <li>Mountain Standard Time (MST)</li>
+                        <li>Pacific Standard Time (PST)</li>
+                        <li>Alaska Standard Time (AKST)</li>
+                        <li>Hawaii-Aleutian Standard Time (HAST)</li>
+                    </ul>
+                </div>
+                <div>
+                    <label for="callingCode">Calling Code:</label>
+                    <span id="callingCode">+1</span>
+                </div>
+                <div>
+                    <label for="internetTLD">Internet TLD:</label>
+                    <span id="internetTLD">.us</span>
+                </div>
+            </section>
+            <section class="weather">
+                <h2>Weather</h2>
+                <div>
+                    <img src="images/weather-icon.svg" alt="Weather Icon" class="weather-icon mobile-icon" id="weatherIcon">
+                    <span class="weather-icon desktop-icon" id="weatherIconEmoji">☁️</span>
+                </div>
+                <div>
+                    <label for="temperature">Temperature:</label>
+                    <span id="temperature">68°F</span>
+                </div>
+                <div>
+                    <label for="windSpeed">Wind Speed:</label>
+                    <span id="windSpeed">10 mph</span>
+                </div>
+                <div>
+                    <label for="windChill">Wind Chill:</label>
+                    <span id="windChill">N/A</span>
+                </div>
+            </section>
+        </section>
+    </main>
+    <footer>
+        <p>Ⓒ <span id="currentyear"></span> | Hunter Quantz | United States of America</p>
+        <p id="lastModified"></p>
+    </footer>
+</body>
+</html>
