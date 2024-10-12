@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WDD 131 Hunter Quantz | Temple Album</title>
+    <meta name="author" content="Hunter Quantz">
+    <meta
+        name="description"
+        content="The week02 assignment to get a responsive picture album for some temples of my choice. It demonstrates the usefulness of responsive web pages."
+    >
+    <link rel="stylesheet" href="styles/filtered-temples.css">
+    <link rel="stylesheet" href="styles/filtered-temples-large.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
+    <script src="scripts/filtered-templs.js" defer></script>
+    <script src="scripts/getdates.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Temple Album</h1>
+        <div id="menu" class="menu-toggle"></div>
+        <nav>
+            <ul>
+                <li><a href="#home" class="nav-link" data-filter="all">Home</a></li>
+                <li><a href="#old" class="nav-link" data-filter="old">Old</a></li>
+                <li><a href="#new" class="nav-link" data-filter="new">New</a></li>
+                <li><a href="#large" class="nav-link" data-filter="large">Large</a></li>
+                <li><a href="#small" class="nav-link" data-filter="small">Small</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Home</h2>
+        <div id="temple-pictures"></div>
+    </main>
+    <footer>
+        <p>Ⓒ <span id="currentyear"></span> | Hunter Quantz | United States of America</p>
+        <p id="lastModified"></p>
+    </footer>
+</body>
+</html>
