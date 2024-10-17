@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WDD131 Hunter Quantz | Form</title>
+    <meta name="author" content="Hunter Quantz">
+    <meta name="description" content="Product review form for users to submit their feedback on products, including ratings, features, and written reviews.">
+    <link rel="stylesheet" href="styles/form.css">
+    <script src="scripts/form.js" defer></script>
+    <script src="scripts/getdates.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Product Review</h1>
+    </header>
+        <div class="container">
+            <form id="reviewForm" action="review.html" method="get">
+                <label for="productName">Product Name</label>
+                <select name="productName" id="productName" required>
+                    <option value="" disabled selected>Select a Product...</option>
+                </select>
+                <label>Overall Rating</label>
+                <div class="rating" id="overallRating">
+                    <div>
+                        <label for="rating1">&star;</label>
+                        <input type="radio" id="rating1" name="rating" required>
+                    </div>
+                    <div>
+                        <label for="rating2">&star;&star;</label>
+                        <input type="radio" name="rating" id="rating2" required>
+                    </div>
+                    <div>
+                        <label for="rating3">&star;&star;&star;</label>
+                        <input type="radio" name="rating" id="rating3" required>
+                    </div>
+                    <div>
+                        <label for="rating4">&star;&star;&star;&star;</label>
+                        <input type="radio" name="rating" id="rating4" required>
+                    </div>
+                    <div>
+                        <label for="rating5">&star;&star;&star;&star;&star;</label>
+                        <input type="radio" name="rating" id="rating5" required>
+                    </div>
+                </div>
+                <label for="installationDate">Date of Installation:</label>
+                <input type="date" name="installationDate" id="installationDate" required>
+                <label>Which features did you find useful in the product?<br><span class="italic">(Check all that apply)</span></label>
+                <div class="checkbox-group">
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="feature1" name="features" value="Feature 1">
+                        <label for="feature1">Durability</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="feature2" name="features" value="Feature 2">
+                        <label for="feature2">Ease of Use</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="feature3" name="features" value="Feature 3">
+                        <label for="feature3">Performance</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="feature4" name="features" value="Feature 4">
+                        <label for="feature4">Design</label>
+                    </div>
+                </div>
+                
+                <label for="writtenReview">Written Review <span class="optional">(Optional)</span></label>
+                <textarea id="writtenReview" name="writtenReview"></textarea>
+                
+                <label for="userName">Your Name <span class="optional">(Optional)</span></label>
+                <input type="text" id="userName" name="userName">
+                
+                <input type="submit" value="Submit Review">
+            </form>
+        </div>
+    <footer>
+        <p>Ⓒ <span id="currentyear"></span> | Hunter Quantz | United States of America</p>
+        <p id="lastModified"></p>
+    </footer>
+</body>
+</html>

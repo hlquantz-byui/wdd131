@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Thank you for submitting your product review. View the total number of reviews submitted.">
+    <title>WDD131 Hunter Quantz | Review Confirmation</title>
+    <link rel="stylesheet" href="styles/form.css">
+    <meta name="author" content="Hunter Quantz">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Thank You for Your Review!</h1>
+        <p>Your review has been submitted successfully.</p>
+        <p>Total Reviews Submitted: <span id="reviewCount"></span></p>
+        <a href="form.html">Submit Another Review</a>
+    </div>
+    <footer>
+        <p>&copy; 2023 Product Reviews</p>
+    </footer>
+    <script>
+        // Display the review count
+        const reviewCount = localStorage.getItem('reviewCount') || 0;
+        document.getElementById('reviewCount').textContent = reviewCount;
+    </script>
+</body>
+
+</html>
