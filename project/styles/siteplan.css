@@ -1,0 +1,53 @@
+:root{
+    --dark-blue: #1A1A4B;/* Dark Blue */
+    --silver: #C0C0C0;/* Silver */
+    --transparent-bg: rgba(255, 255, 255, 0.1);/* Slightly transparent background */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: var(--dark-blue);
+    color: var(--silver);
+    margin: 0;
+    padding: 20px;
+}
+
+header{
+    text-align: center;
+}
+
+h1{
+    font-family: 'Cinzel', serif;
+    margin-bottom: 20px;
+}
+h2 {
+    font-family: 'Cinzel', serif;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+section {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid var(--silver);/* Silver border */
+    border-radius: 5px;
+    background-color: var(--transparent-bg)
+}
+
+ul{
+    padding-left: 20px;
+}
+
+footer {
+    margin-top: 20px;
+    text-align: center;
+    min-height: 25px;
+    padding: 10px;
+    font-family: 'Playfair Display', serif;
+}
