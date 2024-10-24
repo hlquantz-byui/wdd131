@@ -1,101 +1,92 @@
+// Selectors
 const menuToggle = document.querySelector('.menu-toggle');
-    const navList = document.querySelector('.nav-list');
+const navList = document.querySelector('.nav-list');
+const saveBtn = document.querySelector('.save-btn');
+const formElements = document.querySelectorAll('input, textarea');
 
-    menuToggle.addEventListener('click', () => {
-        navList.classList.toggle('active');
+// Modal elements
+const skillModal = document.getElementById('add-skill-modal');
+const itemModal = document.getElementById('add-item-modal');
+
+// Buttons that open the modals
+const addSkillBtn = document.getElementById('add-skill-btn');
+const addItemBtn = document.getElementById('add-item-btn');
+
+// <span> elements that close the modals
+const closeSkillModal = document.getElementById('close-skill-modal');
+const closeItemModal = document.getElementById('close-item-modal');
+
+// Input fields
+const newSkillInput = document.getElementById('new-skill-input');
+const newItemInput = document.getElementById('new-item-input');
+
+// Submit buttons
+const submitSkillBtn = document.getElementById('submit-skill-btn');
+const submitItemBtn = document.getElementById('submit-item-btn');
+
+// Event listeners
+document.addEventListener('DOMContentLoaded', () => {
+    loadSavedData();
+    saveBtn.addEventListener('click', saveFormData);
+    addSkillBtn.addEventListener('click', () => openModal(skillModal));
+    addItemBtn.addEventListener('click', () => openModal(itemModal));
+    closeSkillModal.addEventListener('click', () => closeModal(skillModal));
+    closeItemModal.addEventListener('click', () => closeModal(itemModal));
+    
+    window.addEventListener('click', (event) => {
+        if (event.target === skillModal) closeModal(skillModal);
+        if (event.target === itemModal) closeModal(itemModal);
     });
 
-document.addEventListener('DOMContentLoaded', () => {
-    const saveBtn = document.querySelector('.save-btn');
-    const formElements = document.querySelectorAll('input, textarea');
+    submitSkillBtn.addEventListener('click', () => addToList('skills-list', newSkillInput, skillModal));
+    submitItemBtn.addEventListener('click', () => addToList('inventory-list', newItemInput, itemModal));
+});
 
-    // Load saved data from localStorage if available
+// Load saved data from localStorage
+function loadSavedData() {
     formElements.forEach(element => {
         const savedValue = localStorage.getItem(element.id);
         if (savedValue) {
             element.value = savedValue;
         }
     });
+}
 
-    // Save form data to localStorage on button click
-    saveBtn.addEventListener('click', () => {
-        formElements.forEach(element => {
-            localStorage.setItem(element.id, element.value);
-        });
-        alert('Character sheet saved!');
+// Save form data to localStorage
+function saveFormData() {
+    formElements.forEach(element => {
+        localStorage.setItem(element.id, element.value);
     });
-});
-
-// Get modal elements
-const skillModal = document.getElementById('add-skill-modal');
-const itemModal = document.getElementById('add-item-modal');
-
-// Get buttons that open the modals
-const addSkillBtn = document.getElementById('add-skill-btn');
-const addItemBtn = document.getElementById('add-item-btn');
-
-// Get <span> elements that close the modals
-const closeSkillModal = document.getElementById('close-skill-modal');
-const closeItemModal = document.getElementById('close-item-modal');
-
-// Get input fields
-const newSkillInput = document.getElementById('new-skill-input');
-const newItemInput = document.getElementById('new-item-input');
-
-// Get submit buttons
-const submitSkillBtn = document.getElementById('submit-skill-btn');
-const submitItemBtn = document.getElementById('submit-item-btn');
-
-// Open modals
-addSkillBtn.onclick = function() {
-    skillModal.style.display = 'block';
+    alert('Character sheet saved!');
 }
 
-addItemBtn.onclick = function() {
-    itemModal.style.display = 'block';
+// Open a modal
+function openModal(modal) {
+    modal.style.display = 'block';
 }
 
-// Close modals
-closeSkillModal.onclick = function() {
-    skillModal.style.display = 'none';
+// Close a modal
+function closeModal(modal) {
+    modal.style.display = 'none';
 }
 
-closeItemModal.onclick = function() {
-    itemModal.style.display = 'none';
-}
-
-// Close modals when clicking outside of them
-window.onclick = function(event) {
-    if (event.target == skillModal) {
-        skillModal.style.display = 'none';
-    }
-    if (event.target == itemModal) {
-        itemModal.style.display = 'none';
-    }
-}
-
-// Add skill to list
-submitSkillBtn.onclick = function() {
-    const skillList = document.getElementById('skills-list');
-    const newSkill = newSkillInput.value.trim();
-    if (newSkill) {
-        const li = document.createElement('li');
-        li.textContent = newSkill;
-        skillList.appendChild(li);
-        newSkillInput.value = ''; // Clear input field
-        skillModal.style.display = 'none'; // Close modal
-    }
-}
-
-// Add item to inventory
-submitItemBtn.onclick = function() {
-    const inventoryList = document.getElementById('inventory-list');
-    const newItem = newItemInput.value.trim();
+// Add a new item to a list (skills or inventory)
+function addToList(listId, inputField, modal) {
+    const list = document.getElementById(listId);
+    const newItem = inputField.value.trim();
+    
     if (newItem) {
         const li = document.createElement('li');
         li.textContent = newItem;
-        inventoryList.appendChild(li);
-        newItemInput.value = ''; // Clear input field
-        itemModal.style.display = 'none'; // Close modal
+        list.appendChild(li);
+        inputField.value = ''; // Clear input field
+        closeModal(modal); // Close modal
+    } else {
+        alert('Please enter a valid item or skill.');
     }
 }
+
+// Toggle navigation menu
+menuToggle.addEventListener('click', () => {
+    navList.classList.toggle('active');
+});

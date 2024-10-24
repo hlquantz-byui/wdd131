@@ -1,9 +1,9 @@
 const menuToggle = document.querySelector('.menu-toggle');
-    const navList = document.querySelector('.nav-list');
+const navList = document.querySelector('.nav-list');
 
-    menuToggle.addEventListener('click', () => {
-        navList.classList.toggle('active');
-    });
+menuToggle.addEventListener('click', () => {
+    navList.classList.toggle('active');
+});
 
 // encounter-generator.js
 
@@ -34,17 +34,45 @@ const encounters = {
 
 // Function to generate encounters
 function generateEncounter() {
-    const numPlayers = document.getElementById('num-players').value;
-    const playerLevel = document.getElementById('player-level').value;
+    const numPlayers = parseInt(document.getElementById('num-players').value);
+    const playerLevel = parseInt(document.getElementById('player-level').value);
     const difficulty = document.getElementById('difficulty').value;
-    
-    // Randomly select an encounter from the appropriate difficulty
-    const randomIndex = Math.floor(Math.random() * encounters[difficulty].length);
-    const selectedEncounter = encounters[difficulty][randomIndex];
-    
+
+    // Validate inputs
+    if (isNaN(numPlayers) || numPlayers <= 0) {
+        alert("Please enter a valid number of players.");
+        return;
+    }
+    if (isNaN(playerLevel) || playerLevel <= 0) {
+        alert("Please enter a valid player level.");
+        return;
+    }
+
+    // Filter encounters based on player level (for demonstration purposes)
+    const filteredEncounters = encounters[difficulty].filter(encounter => {
+        // Placeholder logic: you can adjust this based on actual level requirements for each encounter
+        if (difficulty === 'easy' && playerLevel < 3) return true;
+        if (difficulty === 'medium' && playerLevel >= 3 && playerLevel < 6) return true;
+        if (difficulty === 'hard' && playerLevel >= 6) return true;
+        return false;
+    });
+
+    // Check if there are any valid encounters
+    if (filteredEncounters.length === 0) {
+        alert("No suitable encounters found for the given player level.");
+        return;
+    }
+
+    // Randomly select an encounter from the filtered encounters
+    const randomIndex = Math.floor(Math.random() * filteredEncounters.length);
+    const selectedEncounter = filteredEncounters[randomIndex];
+
     // Display the result
     const resultDiv = document.getElementById('encounter-result');
-    resultDiv.innerHTML = `<h3>Generated Encounter:</h3><p>${selectedEncounter}</p>`;
+    resultDiv.innerHTML = `
+        <h3>Generated Encounter:</h3>
+        <p>${selectedEncounter}</p>
+    `;
 }
 
 // Event listener for the button
