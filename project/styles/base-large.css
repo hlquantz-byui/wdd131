@@ -1,0 +1,23 @@
+/* desktop-navigation.css */
+nav ul {
+    list-style-type: none;
+    display: flex;
+}
+
+nav ul li {
+    flex: 1 1 100%;
+}
+
+nav a {
+    padding: 10px 20px;
+    display: inline-block;
+    color: var(--silver);
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+    background-color: var(--light-blue);
+    text-decoration: underline 1px;
+    border-radius: 5px;
+}

@@ -1,0 +1,186 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+}
+
+nav ul li {
+    flex: 1 1 100%;
+}
+
+nav a {
+    padding: 10px 20px;
+    display: inline-block;
+    color: var(--silver);
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+    background-color: var(--light-blue);
+    text-decoration: underline 1px;
+    border-radius: 5px;
+}
+
+header{
+    margin: 10px;
+    text-align: center;
+}
+
+/* Main container grid for the multi-column layout */
+main {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+}
+
+#character-details{
+    grid-column: span 1;
+}
+
+#attributes-vitality-aether {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /* Three columns for this section */
+    grid-gap: 20px;
+}
+
+#attributes, #vitality, #aether-fate {
+    padding: 10px; /* Add some padding inside each column */
+    border: 1px solid var(--silver); /* Add a border to separate columns */
+    border-radius: 5px;
+    background-color: var(--transparent-bg); /* Ensure background is consistent */
+}
+
+#aether-fate {
+    grid-column: 3 / 4;
+    display: flex;
+    flex-direction: column;
+}
+
+#aether {
+    margin-bottom: 10px; /* Aether on top */
+}
+
+#fate-points {
+    margin-top: 10px; /* Fate Points below Aether */
+}
+
+/* 3. Skills and Inventory & Equipment (two-column layout) */
+#skills-inventory {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two columns for this section */
+    grid-gap: 20px;
+}
+
+#skills, #inventory {
+    padding: 10px; /* Add padding */
+    border: 1px solid var(--silver); /* Add border */
+    border-radius: 5px; /* Rounded corners */
+    background-color: var(--transparent-bg); /* Consistent background */
+}
+
+#skills-list, #inventory-list {
+    padding-left: 0; /* Remove left padding */
+    margin: 0; /* Remove default margin */
+    overflow-y: auto; /* Add a scrollbar if content overflows */
+    border-radius: 5px; /* Add rounded corners */
+
+}
+
+/* 4. Notes section spanning the full width at the bottom */
+#notes {
+    grid-column: span 1;
+    width: 100%;
+}
+
+.save-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--silver);
+    color: var(--dark-blue);
+    padding: 10px 20px;
+    border-radius: 50px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.save-btn:hover {
+    background-color: #f0f0f0;
+}
+
+.add-btn {
+    background-color: var(--silver);
+    color: var(--dark-blue);
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+.add-btn:hover {
+    background-color: #f0f0f0;
+}
+
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+    background-color: var(--light-blue);
+    margin: 15% auto; 
+    padding: 20px;
+    border: 1px solid var(--silver);
+    border-radius: 5px;
+    width: 80%; 
+    max-width: 400px; 
+    color: var(--silver);
+}
+
+.modal button{
+    background-color: var(--silver);
+    color: var(--dark-blue);
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+    margin-top: 10px; 
+    transition: background-color 0.3s; 
+}
+
+.modal button:hover{
+    background-color: #f0f0f0; 
+}
+
+.close {
+    color: var(--silver);
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #f0f0f0;
+    text-decoration: none;
+    cursor: pointer;
+}

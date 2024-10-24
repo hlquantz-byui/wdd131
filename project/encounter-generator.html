@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encounter Generator</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your stylesheet -->
+    <meta name="author" content="Hunter Quantz">
+    <meta name="description" content="Discover endless adventures with our Random Encounter Generator for tabletop RPGs. Create unique scenarios and thrilling encounters to enhance your gaming experience!" />
+    <link rel="stylesheet" href="styles/encounter-generator.css">
+    <link rel="stylesheet" href="styles/encounter-genertor-large.css"> 
+    <script src="scripts/encounter-generator.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+        rel="stylesheet">
+    <script src="../scripts/getdates.js" defer></script>
+
+</head>
+<body>
+    <header>
+        <h1>Shadows and Echoes: A Journey Beyond</h1>
+        <h2>Encounter Generator</h2>
+        <nav>
+            <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
+            <ul class="nav-list">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="character-sheet.html">Character Sheet</a></li>
+                <li><a href="#encounter-generator">Encounter Generator</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="encounter-generator">
+        <h2>Generate Encounter</h2>
+        <label for="num-players">Number of Players:</label>
+        <input type="number" id="num-players" min="1" max="10" value="1">
+
+        <label for="player-level">Player Level:</label>
+        <input type="number" id="player-level" min="1" max="15" value="1">
+
+        <label for="difficulty">Difficulty:</label>
+        <select id="difficulty">
+            <option value="easy">Easy</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option>
+        </select>
+
+        <button id="generate-encounter">Generate Encounter</button>
+        <div id="encounter-result"></div>
+    </section>
+
+    <footer>
+        <p>Ⓒ <span id="currentyear"></span> | Hunter Quantz | United States of America</p>
+        <p id="lastModified"></p>
+    </footer>
+</body>
+</html>

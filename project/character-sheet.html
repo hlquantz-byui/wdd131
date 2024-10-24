@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Character sheet for Shadows and Echoes: A Journey Beyond TTRPG system. Track your attributes, vitality, aether, fate points, skills, and more.">
+    <title>Character Sheet | Shadows and Echoes</title>
+    <meta name="author" content="Hunter Quantz">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./styles/character-sheet.css">
+    <link rel="stylesheet" href="styles/character-sheet-large.css">
+    <script src="scripts/character-sheet.js" defer></script>
+    <script src="../scripts/getdates.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Shadows and Echoes: A Journey Beyond</h1>
+        <h2>Character Sheet</h2>
+        <nav>
+            <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
+            <ul class="nav-list">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="#character-sheet">Character Sheet</a></li>
+                <li><a href="encounter-generator.html">Encounter Generator</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="character-details">
+            <h2>Character Details</h2>
+            <label for="character-name">Character Name:</label>
+            <input type="text" id="character-name" name="character-name" placeholder="Enter your character's name">
+
+            <label for="character-class">Character Class:</label>
+            <input type="text" id="character-class" name="character-class" placeholder="Enter your class">
+
+            <label for="tier">Tier:</label>
+            <input type="text" id="tier" name="tier" placeholder="Current tier (1-15)">
+
+            <label for="background">Background:</label>
+            <input type="text" id="background" name="background" placeholder="Character background">
+        </section>
+
+        <section id="attributes-vitality-aether">
+            <div id="attributes">
+                <h2>Attributes</h2>
+                <div class="attribute-block">
+                    <label for="might">Might:</label>
+                    <input type="number" id="might" name="might" placeholder="0">
+                </div>
+                <div class="attribute-block">
+                    <label for="agility">Agility:</label>
+                    <input type="number" id="agility" name="agility" placeholder="0">
+                </div>
+                <div class="attribute-block">
+                    <label for="endurance">Endurance:</label>
+                    <input type="number" id="endurance" name="endurance" placeholder="0">
+                </div>
+                <div class="attribute-block">
+                    <label for="resolve">Resolve:</label>
+                    <input type="number" id="resolve" name="resolve" placeholder="0">
+                </div>
+                <div class="attribute-block">
+                    <label for="perception">Perception:</label>
+                    <input type="number" id="perception" name="perception" placeholder="0">
+                </div>
+                <div class="attribute-block">
+                    <label for="ingenuity">Ingenuity:</label>
+                    <input type="number" id="ingenuity" name="ingenuity" placeholder="0">
+                </div>
+            </div>
+
+            <div id="vitality">
+                <h2>Vitality</h2>
+            <label for="vitality-points">Vitality Points (VP):</label>
+            <input type="number" id="vitality-points" name="vitality-points" placeholder="0">
+
+            <label for="vitality-dice">Vitality Dice:</label>
+            <input type="text" id="vitality-dice" name="vitality-dice" placeholder="Enter dice roll formula (e.g., 1d8)">
+            </div>
+
+            <div id="aether-fate">
+                <div id="aether">
+                    <h2>Aether</h2>
+                    <label for="aether-points">Aether Points (AP):</label>
+                    <input type="number" id="aether-points" name="aether-points" placeholder="0">
+                </div>
+                <div id="fate-points">
+                    <h2>Fate Points</h2>
+                    <label for="fate">Current Fate Points:</label>
+                    <input type="number" id="fate" name="fate-points" placeholder="0">
+                </div>
+            </div>
+        </section>
+
+        <!-- Popup Form for Adding Skills -->
+        <div id="add-skill-modal" class="modal">
+            <div class="modal-content">
+                <span class="close" id="close-skill-modal">&times;</span>
+                <h2>Add Skill</h2>
+                <input type="text" id="new-skill-input" placeholder="Enter new skill" >
+                <button id="submit-skill-btn">Add Skill</button>
+            </div>
+        </div>
+
+        <!-- Popup Form for Adding Inventory Items -->
+        <div id="add-item-modal" class="modal">
+            <div class="modal-content">
+                <span class="close" id="close-item-modal">&times;</span>
+                <h2>Add Item</h2>
+                <input type="text" id="new-item-input" placeholder="Enter new item" >
+                <button id="submit-item-btn">Add Item</button>
+            </div>
+        </div>
+
+        <section id="skills-inventory">
+            <div id="skills">
+                <h2>Skills</h2>
+                <ul id="skills-list"></ul>
+                <button id="add-skill-btn" class="add-btn">Add Skill</button>
+            </div>
+
+            <div id="inventory">
+                <h2>Inventory & Equipment</h2>
+                <label for="armor">Armor:</label>
+                <input type="text" id="armor" name="armor" placeholder="Enter armor type">
+
+                <label for="weapon">Primary Weapon:</label>
+                <input type="text" id="weapon" name="weapon" placeholder="Enter weapon type">
+
+                <label>Other Equipment:</label>
+                <ul id="inventory-list"></ul>
+                <button id="add-item-btn" class="add-btn">Add Item</button>
+            </div>
+        </section>
+
+        <section id="player-notes">
+            <h2>Notes</h2>
+            <textarea id="notes" name="notes" placeholder="Additional character notes..."></textarea>
+        </section>
+        <button class="save-btn">Save</button>
+    </main>
+
+    <footer>
+        <p>Ⓒ <span id="currentyear"></span> | Hunter Quantz | United States of America</p>
+        <p id="lastModified"></p>
+    </footer>
+</body>
+</html>

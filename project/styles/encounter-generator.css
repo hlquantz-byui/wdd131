@@ -1,0 +1,128 @@
+:root{
+    --dark-blue: #1A1A4B;/* Dark Blue */
+    --silver: #C0C0C0;/* Silver */
+    --transparent-bg: rgba(255, 255, 255, 0.1);/* Slightly transparent background */
+    --hover-bg: rgba(255, 255, 255, 0.2); /* Hover background */
+    --light-blue: #2E2E6A; /* Light Blue for hover */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: var(--dark-blue);
+    color: var(--silver);
+    margin: 0;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+header{
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+nav {
+    position: relative;
+}
+
+.menu-toggle {
+    display: none; 
+    background: none;
+    border: none;
+    color: var(--silver);
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.nav-list {
+    display: flex;
+    flex-direction: row;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-list {
+        display: none; 
+        flex-direction: column; 
+        position: absolute;
+        top: 100%; 
+        left: 0;
+        right: 0;
+        background-color: var(--dark-blue);
+        z-index: 1000;
+    }
+
+    .nav-list.active {
+        display: flex;
+    }
+
+    nav ul li {
+        flex: 1;
+    }
+}
+
+section {
+    margin: 20px auto;
+    padding: 15px;
+    border: 1px solid var(--silver);
+    border-radius: 5px;
+    background-color: var(--transparent-bg);
+    max-width: 90%; 
+}
+
+h1, h2 {
+    font-family: 'Cinzel', serif;
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid var(--silver);
+}
+
+button {
+    background-color: var(--silver);
+    color: var(--dark-blue);
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%; 
+}
+
+button:hover {
+    background-color: #A9A9A9; 
+}
+
+#encounter-result {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid var(--silver);
+    border-radius: 5px;
+    background-color: var(--transparent-bg);
+}
+
+footer {
+    margin-top: 40px;
+    text-align: center;
+    min-height: 25px;
+    padding: 10px;
+    font-family: 'Playfair Display', serif;
+    border-top: 1px solid var(--silver);
+    background-color: var(--transparent-bg);
+}

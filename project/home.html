@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WDD 131 Hunter Quantz | TTRPG home</title>
+    <meta name="author" content="Hunter Quantz">
+    <meta name="description" content="Shadows and Echoes: A Journey Beyond is a tabletop RPG system featuring a d20 core mechanic, Aether-fueled magic, customizable attributes, and a unique coin economy. Players face increasing challenges with a dynamic XP system and can use Fate Points to influence fate. Explore a world where vitality reflects both physical and mental endurance, and magic comes at a cost. Perfect for players seeking a blend of strategy, realism, and fantasy.">
+    <script src="../scripts/getdates.js" defer></script>
+    <script src="scripts/home.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./styles/base.css">
+    <link rel="stylesheet" href="styles/base-large.css">
+</head>
+<body>
+    <header>
+        <h1>Shadows and Echoes: A Journey Beyond</h1>
+        <nav>
+            <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
+            <ul class="nav-list">
+                <li><a href="#home">Home</a></li>
+                <li><a href="character-sheet.html">Character Sheet</a></li>
+                <li><a href="encounter-generator.html">Encounter Generator</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="introduction">
+            <h2>Introduction</h2>
+            <p>Welcome to <strong>Shadows and Echoes: A Journey Beyond</strong>, a tabletop RPG that blends a d20 core mechanic, Aether-fueled magic, a dynamic coinage system, and a unique progression system. Explore a world where fate can be altered, and every action has a cost.</p>
+          </section>
+      
+          <!-- Core Rules -->
+          <section id="rules">
+            <h2>Core Rules</h2>
+      
+            <!-- Attributes -->
+            <article id="attributes">
+              <h3>Attributes</h3>
+              <p>There are six core attributes in Shadows and Echoes, which define your character's capabilities:</p>
+              <ul>
+                <li><strong>Might:</strong> Physical strength and power.</li>
+                <li><strong>Agility:</strong> Dexterity, quickness, and flexibility.</li>
+                <li><strong>Endurance:</strong> Stamina and resistance to fatigue.</li>
+                <li><strong>Resolve:</strong> Willpower, mental fortitude.</li>
+                <li><strong>Perception:</strong> Awareness of surroundings and insight.</li>
+                <li><strong>Ingenuity:</strong> Intelligence, creativity, and problem-solving ability.</li>
+              </ul>
+            </article>
+      
+            <!-- Core Mechanics -->
+            <article id="core-mechanics">
+              <h3>Core Mechanics</h3>
+              <p>The game primarily uses a d20 for most checks and d100 (percentage rolls) for certain outcomes. Standard RPG dice (d4, d6, d8, d10, d12) are used for attack damage and specific abilities.</p>
+            </article>
+      
+            <!-- Experience & Tiers -->
+            <article id="experience">
+              <h3>Experience & Tier Progression</h3>
+              <p>Characters progress through three tiers—Novice, Adept, and Master—by accumulating experience points (XP). The XP required for each tier increases logarithmically, pushing players to face more powerful foes as they grow in strength.</p>
+              <!-- XP Table -->
+                <table class="xp-table">
+                    <caption>XP Requirements for Tiers</caption>
+                    <thead>
+                    <tr>
+                        <th>Tier</th>
+                        <th>Rank</th>
+                        <th>XP Needed</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <!-- Novice Tier -->
+                    <tr>
+                        <td rowspan="5">Novice</td>
+                        <td>1</td>
+                        <td>0 XP</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>100 XP</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>200 XP</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>300 XP</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>400 XP</td>
+                    </tr>
+        
+                    <!-- Adept Tier -->
+                    <tr>
+                        <td rowspan="5">Adept</td>
+                        <td>6</td>
+                        <td>650 XP</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>900 XP</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>1,150 XP</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>1,400 XP</td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>1,650 XP</td>
+                    </tr>
+        
+                    <!-- Master Tier -->
+                    <tr>
+                        <td rowspan="5">Master</td>
+                        <td>11</td>
+                        <td>2,150 XP</td>
+                    </tr>
+                    <tr>
+                        <td>12</td>
+                        <td>2,650 XP</td>
+                    </tr>
+                    <tr>
+                        <td>13</td>
+                        <td>3,150 XP</td>
+                    </tr>
+                    <tr>
+                        <td>14</td>
+                        <td>3,650 XP</td>
+                    </tr>
+                    <tr>
+                        <td>15</td>
+                        <td>4,150 XP</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </article>
+      
+            <!-- Fate Points -->
+            <article id="fate-points">
+              <h3>Fate Points</h3>
+              <p>Fate Points are awarded by the GM and allow players to reroll checks or stabilize from a death-saving throw. They do not refresh automatically and must be earned through gameplay.</p>
+            </article>
+      
+            <!-- Aether Points (Magic) -->
+            <article id="magic">
+              <h3>Aether Points & Magic</h3>
+              <p>Magic is fueled by <strong>Aether Points (AP)</strong>. Spells have varying AP costs, allowing players to mix and match them. Running out of Aether Points can cause exhaustion, while high-level characters can use more than their AP limit at a risk of overdraw.</p>
+            </article>
+      
+            <!-- Vitality Points & Vitality Dice -->
+            <article id="vitality">
+              <h3>Vitality Points & Vitality Dice</h3>
+              <p><strong>Vitality Points (VP)</strong> represent both physical and mental endurance. Characters lose VP when taking damage or suffering mental strain. They recover using <strong>Vitality Dice</strong> during rest periods.</p>
+            </article>
+      
+            <!-- Rest and Recovery -->
+            <article id="rest">
+              <h3>Rest & Recovery</h3>
+              <p>Characters recover Vitality Points and Aether Points during rest. Short Rests restore some VP, while Long Rests fully restore VP, AP, and Vitality Dice. Fate Points do not restore automatically.</p>
+            </article>
+      
+            <!-- Exhaustion System -->
+            <article id="exhaustion">
+              <h3>Exhaustion</h3>
+              <p>Running out of Aether Points results in levels of exhaustion. Each level reduces a character's abilities until they rest or recover.</p>
+              <h4>Exhaustion Levels</h4>
+                <p>There are five levels of exhaustion. Each level adds more severe penalties to the character's capabilities:</p>
+                <ol>
+                <li><strong>Level 1:</strong> Disadvantage on all checks involving Might, Agility, and Endurance.</li>
+                <li><strong>Level 2:</strong> Movement speed is halved, and all attack rolls have disadvantage.</li>
+                <li><strong>Level 3:</strong> Characters can only take one action per turn, regardless of abilities.</li>
+                <li><strong>Level 4:</strong> All skill and saving throws are made with disadvantage.</li>
+                <li><strong>Level 5:</strong> The character falls unconscious.</li>
+                </ol>
+
+                <h4>Recovering from Exhaustion</h4>
+                <p>Recovering from exhaustion requires rest and proper care:</p>
+                <ul>
+                <li><strong>Short Rest:</strong> Restores one level of exhaustion.</li>
+                <li><strong>Long Rest:</strong> Restores two levels of exhaustion. If the character is fully rested and well-fed, they can recover all levels of exhaustion.</li>
+                <li><strong>Magical Remedies:</strong> Some high-level spells or potions may remove one or more levels of exhaustion.</li>
+                </ul>
+
+                <h4>Exhaustion from Aether Overdraw</h4>
+                <p>When high-level characters attempt to cast spells beyond their Aether Points limit, they may suffer exhaustion as a result of overdraw. Each overdraw attempt increases the character's exhaustion level by one.</p>
+            </article>
+      
+            <!-- Combat Rules -->
+            <article id="combat">
+              <h3>Combat Rules</h3>
+              <p>Combat follows an initiative system with checks for attacks, spellcasting, and other actions. Vitality Points and Aether Points are key resources that can affect battle outcomes.</p>
+            </article>
+      
+            <!-- Coinage and Economy -->
+            <article id="coinage">
+              <h3>Coinage & Economy</h3>
+              <p>The economy uses a unique currency system with five types of coins: Tin, Iron, Bronze, Silver, and Gold.</p>
+              <table class="currency-table">
+                <caption>Currency Exchange Rate</caption>
+                <tr>
+                    <td>1 Iron Coin</td>
+                    <td>100 Tin Coins</td>
+                </tr>
+                <tr>
+                    <td>1 Bronze Coin</td>
+                    <td>8 Iron Coins</td>
+                </tr>
+                <tr>
+                    <td>1 Silver Coin</td>
+                    <td>6 Bronze Coins</td>
+                </tr>
+                <tr>
+                    <td>1 Gold Coin</td>
+                    <td>5 Silver Coins</td>
+                </tr>
+              </table>
+            </article>
+          </section>
+    </main>
+    <footer>
+        <p>Ⓒ <span id="currentyear"></span> | Hunter Quantz | United States of America</p>
+        <p id="lastModified"></p>
+    </footer>
+</body>
+</html>

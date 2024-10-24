@@ -1,0 +1,91 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: var(--dark-blue);
+    color: var(--silver);
+    margin: 0;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+}
+
+nav ul li {
+    flex: 1 1 100%;
+}
+
+nav a {
+    padding: 10px 20px;
+    display: inline-block;
+    color: var(--silver);
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+    background-color: var(--light-blue);
+    text-decoration: underline 1px;
+    border-radius: 5px;
+}
+
+
+section {
+    margin: 20px auto;
+    padding: 15px;
+    border: 1px solid var(--silver);
+    border-radius: 5px;
+    background-color: var(--transparent-bg);
+    max-width: 600px; /* Maintain a specific width for desktop */
+}
+
+h1, h2 {
+    font-family: 'Cinzel', serif;
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid var(--silver);
+}
+
+button {
+    background-color: var(--silver);
+    color: var(--dark-blue);
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: auto; /* Adjust width for desktop */
+    display: block; /* Center the button */
+    margin: 0 auto; /* Centering */
+}
+
+button:hover {
+    background-color: #A9A9A9; /* Darker shade for hover */
+}
+
+#encounter-result {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid var(--silver);
+    border-radius: 5px;
+    background-color: var(--transparent-bg);
+}

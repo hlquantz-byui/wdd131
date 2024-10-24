@@ -1,0 +1,198 @@
+:root{
+    --dark-blue: #1A1A4B;/* Dark Blue */
+    --silver: #C0C0C0;/* Silver */
+    --transparent-bg: rgba(255, 255, 255, 0.1);/* Slightly transparent background */
+    --hover-bg: rgba(255, 255, 255, 0.2); /* Hover background */
+    --light-blue: #2E2E6A; /* Light Blue for hover */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: var(--dark-blue);
+    color: var(--silver);
+    margin: 0;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+header{
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* Mobile Menu Styles */
+nav {
+    position: relative;
+}
+
+.menu-toggle {
+    display: none; /* Hide the toggle button by default */
+    background: none;
+    border: none;
+    color: var(--silver);
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.nav-list {
+    display: flex; /* Default to flex for larger screens */
+    flex-direction: row; /* Horizontal layout */
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block; /* Show the toggle button on mobile */
+    }
+
+    .nav-list {
+        display: none; /* Hide the menu by default on mobile */
+        flex-direction: column; /* Stack items vertically */
+        position: absolute; /* Position it absolutely */
+        top: 100%; /* Position below the button */
+        left: 0;
+        right: 0;
+        background-color: var(--dark-blue); /* Background color for the menu */
+        z-index: 1000; /* Ensure it appears above other content */
+    }
+
+    .nav-list.active {
+        display: flex; /* Show the menu when active */
+    }
+
+    nav ul li {
+        flex: 1; /* Allow items to take full width */
+    }
+}
+
+h1{
+    font-family: 'Cinzel', serif;
+    font-size: 3rem;
+    letter-spacing: 2px;
+    color: var(--silver);
+    margin-bottom: 20px;
+}
+h2, h3, h4 {
+    font-family: 'Cinzel', serif;
+    letter-spacing: 1px;
+    color: var(--silver);
+    margin-bottom: 10px;
+}
+
+h2{
+    font-size: 2rem;
+    margin-top: 40px;
+}
+
+h3{
+    font-size: 1.5rem;
+    margin-top: 30px;
+}
+
+h4 {
+    font-size: 1.2rem;
+}
+
+section {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid var(--silver);/* Silver border */
+    border-radius: 8px;
+    background-color: var(--transparent-bg);
+    transition: background-color 0.3s ease;
+}
+
+ul, ol {
+    padding-left: 20px;
+}
+
+a {
+    color: var(--silver);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: var(--light-blue);
+    color: var(--silver);
+    border: none;
+    border-radius: 5px;
+    font-family: 'Cinzel', serif;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: var(--hover-bg);
+}
+
+
+footer {
+    margin-top: 40px;
+    text-align: center;
+    min-height: 25px;
+    padding: 10px;
+    font-family: 'Playfair Display', serif;
+    border-top: 1px solid var(--silver);
+    background-color: var(--transparent-bg);
+}
+
+.xp-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.xp-table th, .xp-table td {
+    padding: 12px 15px; /* Padding for table cells */
+    text-align: left; /* Align text to the left */
+    border: 1px solid var(--silver); /* Border color */
+}
+
+.xp-table th {
+    background-color: var(--light-blue); /* Header background color */
+    color: var(--silver); /* Header text color */
+    font-weight: bold; /* Bold text for headers */
+}
+
+.xp-table tbody tr {
+    background-color: var(--transparent-bg); /* Row background color */
+    transition: background-color 0.3s ease; /* Smooth transition for hover */
+}
+
+.xp-table tbody tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.05); /* Slightly darker for even rows */
+}
+
+.currency-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px; /* Space above the table */
+}
+
+.currency-table th, .currency-table td {
+    padding: 12px 15px; /* Padding for table cells */
+    text-align: left; /* Align text to the left */
+    border: 1px solid var(--silver); /* Border color */
+}
+
+.currency-table th {
+    background-color: var(--light-blue); /* Header background color */
+    color: var(--silver); /* Header text color */
+    font-weight: bold; /* Bold text for headers */
+}
+
+.currency-table tbody tr {
+    background-color: var(--transparent-bg); /* Row background color */
+    transition: background-color 0.3s ease; /* Smooth transition for hover */
+}
+
+.currency-table tbody tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.05); /* Slightly darker for even rows */
+}
